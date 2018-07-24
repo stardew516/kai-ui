@@ -14,7 +14,7 @@
 
 <script>
 import wepy from 'wepy'
-import toptips from '../components/toptips';
+import toptips from '../components/toptips/index';
 
 export default class  TopTips extends wepy.page {
   config = {

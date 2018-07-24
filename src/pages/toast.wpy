@@ -9,7 +9,7 @@
 
 <script>
 import wepy from 'wepy'
-import toast from '../components/toast'
+import toast from '../components/toast/index'
 
 export default class  Toast extends wepy.page {
   config = {

@@ -1,4 +1,3 @@
-<style lang="less" src="../style/font.less"></style>
 <template>
   <view class="select-container {{selectData.class ? selectData.class : ''}}">
    <repeat for="{{selectData.list}}" index="index" item="item" key="key">

@@ -1,7 +1,3 @@
-
-<style lang="less">
-
-</style>
 <template>
   <view class="kai-content">
     <view class="panel">
@@ -62,7 +58,7 @@
 
 <script>
 import wepy from 'wepy'
-
+import cell from '../components/cell/index'
 export default class Index extends wepy.page {
   config = {
     navigationBarTitleText: '主页'

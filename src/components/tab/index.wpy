@@ -1,5 +1,3 @@
-<style lang="less">
-</style>
 <template>
   <view class="tab-container {{tabData.class ? tabData.class : ''}}">
       <block wx:if="{{tabData.scroll}}">

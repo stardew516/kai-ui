@@ -1,0 +1,20 @@
+
+  <view class="kai-content">
+    <block wx:for="{{cellList}}" wx:for-index="index" wx:for-item="item" wx:key="row-{{index}}">
+      
+  <view class="cell">
+<view class="cell-list {{item.linktype > 0 ? 'cell-list-access' : ''}}"  wx:for="{{item}}" wx:key="index"  catchtap="$cell$translateToPage" data-com-index="{{index}}" data-wpytranslatetopage-a="{{item.linktype}}" data-wpytranslatetopage-b="{{item.link}}">
+      <view class="cell-icon" wx:if="{{item.icontype}}">
+        <text wx:if="{{item.icontype==1}}" class="iconfont cell-icon {{item.icontext}}"/>
+        <image wx:if="{{item.icontype==2}}" class="cell-img" src="{{item.icontext}}"/>
+      </view>
+      <view class="cell-list-bd">
+        <view wx:if="{{item.title}}" class="cell-list-text">{{item.title}}</view>
+        <view wx:if="{{item.subtitle}}" class="cell-list-desc">{{item.subtitle}}</view>
+      </view>
+      <view class="cell-list-arrow" wx:if="{{item.detail}}">{{item.detail}}</view>
+    </view>
+  </view>
+
+    </block>
+  </view>
