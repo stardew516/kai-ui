@@ -1,7 +1,7 @@
 <style lang="less" src="./index.less"></style>
 <template>
   <view class="cell">
-<view class="cell-list" wx:for="{{celldata}}" wx:key="index" :class="{'cell-list-access': item.linktype > 0}" catchtap="translateToPage({{item.linktype}}, {{item.link}})">
+    <view class="cell-list" wx:for="{{celldata}}" wx:key="index" :class="{'cell-list-access': item.linktype > 0}" catchtap="translateToPage({{item.linktype}}, {{item.link}})">
       <view class="cell-icon" wx:if="{{item.icontype}}">
         <text wx:if="{{item.icontype==1}}" class="iconfont cell-icon {{item.icontext}}"></text>
         <image wx:if="{{item.icontype==2}}" class="cell-img" src="{{item.icontext}}"/>
@@ -10,7 +10,7 @@
         <view wx:if="{{item.title}}" class="cell-list-text">{{item.title}}</view>
         <view wx:if="{{item.subtitle}}" class="cell-list-desc">{{item.subtitle}}</view>
       </view>
-      <view class="cell-list-arrow" wx:if="{{item.detail}}">{{item.detail}}</view>
+      <view class="cell-list-arrow" wx:if="{{item.linktype > 0}}">{{item.detail?item.detail:''}}</view>
     </view>
   </view>
 </template>
@@ -83,7 +83,7 @@
     }
 
     onLoad () {
-      console.log('celldata', this.celldata, this.index)
+      console.log('celldata', this.celldata)
     }
   }
 </script>

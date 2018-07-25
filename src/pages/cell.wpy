@@ -1,8 +1,10 @@
 <template>
   <view class="kai-content">
-    <repeat for="{{cellList}}" index="index" item="item" key="row-{{index}}">
-      <cell :celldata="item"></cell>
-    </repeat>
+    <view class="panel">
+      <repeat for="{{cellList}}" index="index" item="item" key="row-{{index}}">
+        <cell :celldata="item"></cell>
+      </repeat>
+    </view>
   </view>
 </template>
 
@@ -28,7 +30,47 @@ export default class  Cell extends wepy.page {
       ],
       [
         {
-          title: '单行列表',
+          title: '列表',
+          linktype: 1,
+          link: 'cell'
+        },
+        {
+          title: '列表',
+          linktype: 1,
+          link: 'cell'
+        },
+        {
+          title: '列表',
+          linktype: 1,
+          link: 'cell'
+        }
+      ],
+      [
+        {
+          title: '列表带icon',
+          icontype: '1',
+          icontext: 'icon-components',
+          linktype: 1,
+          link: 'cell'
+        },
+        {
+          title: '列表带icon',
+          icontype: '1',
+          icontext: 'icon-components',
+          linktype: 1,
+          link: 'cell'
+        },
+        {
+          title: '列表带icon',
+          icontype: '1',
+          icontext: 'icon-components',
+          linktype: 1,
+          link: 'cell'
+        }
+      ],
+      [
+        {
+          title: '单行有附加信息',
           subtitle: '图片icon',
           detail: '有箭头',
           linktype: 1,
@@ -69,6 +111,17 @@ export default class  Cell extends wepy.page {
       [
         {
           title: '单行',
+          subtitle: '',
+          detail: '无附加信息',
+          linktype: 1,
+          link: 'index',
+          icontype: '2',
+          icontext: 'https://gss1.bdstatic.com/5bVXsj_p_tVS5dKfpU_Y_D3/urlicon/12.6155.png'
+        }
+      ],
+      [
+        {
+          title: '单行好多字真的好多字不信你数数怎么样',
           subtitle: '',
           detail: '无附加信息',
           linktype: 1,
