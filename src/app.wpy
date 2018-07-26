@@ -17,13 +17,13 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/popup',
+      'pages/helper',
+      'pages/layout',
       'pages/icon',
       'pages/button',
       'pages/index',
       'pages/cell',
-      'pages/layout',
-      'pages/helper',
-      'pages/popup',
       'pages/tag',
       'pages/tab',
       'pages/select',

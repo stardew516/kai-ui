@@ -1,60 +1,35 @@
 
   <view class="kai-content">
     <view class="padding-10">
-      <button class="btn" bindtap="togglePopup">弹出popup</button>
-      <button class="btn btn-success" catchtap="toggleTopPopup">从顶部弹出popup</button>
-      <button class="btn btn-kai" catchtap="toggleBottomPopup">从底部弹出popup</button>
-      <button class="btn btn-warn btn-empty" bindtap="toggleLeftPopup">从左边弹出popup</button>
-      <button class="btn btn-danger btn-empty" catchtap="toggleRightPopup">从右边弹出popup</button>
+      <button class="btn" bindtap="popPosition" data-wpypopposition-a="0">弹出popup</button>
+      <button class="btn btn-success" catchtap="popPosition" data-wpypopposition-a="1">从顶部弹出popup</button>
+      <button class="btn btn-kai" catchtap="popPosition" data-wpypopposition-a="3">从底部弹出popup</button>
+      <button class="btn btn-warn btn-empty" bindtap="popPosition" data-wpypopposition-a="4">从左边弹出popup</button>
+      <button class="btn btn-danger btn-empty" catchtap="popPosition" data-wpypopposition-a="2">从右边弹出popup</button>
     </view>
-    <view class="popup {{ showPopup ? 'popup-show' : ''}}">
-      <view class="popup-mask" bindtap="togglePopup"/>
-      <view class="popup-container popup-example-center">
-        <view class="btns">
-          <button class="btn" bindtap="togglePopup">
-            关闭 popup
-          </button>
+    
+  <view class="popup {{'popup-'+$popup$position}} {{ $popup$show ? 'popup-show' : ''}}">
+      <view class="popup-mask" catchtap="$popup$togglePopup" data-wpytogglepopup-a="{{$popup$id}}"/>
+      <view class="popup-container">
+        
+      </view>
+    </view>
+
+    <block wx:for="{{popData}}" wx:for-index="i" wx:for-item="item" wx:key="row-{{index}}">
+      
+  <view class="popup {{'popup-'+item.position}} {{ item.showPopup ? 'popup-show' : ''}}">
+      <view class="popup-mask" catchtap="$popup$togglePopup" data-com-index="{{i}}" data-wpytogglepopup-a="{{i}}"/>
+      <view class="popup-container">
+        <view>
+          <view class="btns">
+            <button class="btn">
+              111 
+            </button>
+          </view>
         </view>
       </view>
     </view>
 
-    <view class="popup-example-left popup popup-left {{ showLeftPopup ? 'popup-show' : ''}}">
-      <view class="popup-mask" bindtap="toggleLeftPopup"/>
-      <view class="popup-container">
-        <view class="btns">
-          <button class="btn" catchtap="toggleLeftPopup">
-            关闭 popup
-          </button>
-        </view>
-      </view>
-    </view>
-
-    <view class="popup-example-right popup popup-right {{ showRightPopup ? 'popup-show' : ''}}">
-      <view class="popup-mask" catchtap="toggleRightPopup"/>
-      <view class="popup-container">
-        <view class="btns">
-          <button class="btn" catchtap="toggleRightPopup">
-            关闭 popup
-          </button>
-        </view>
-      </view>
-    </view>
-
-    <view class="popup-example-top popup popup-top {{ showTopPopup ? 'popup-show' : ''}}">
-      <view class="popup-mask" catchtap="toggleTopPopup"/>
-      <view class="popup-container">
-        内容
-      </view>
-    </view>
-
-    <view class="popup-example-bottom popup popup-bottom {{ showBottomPopup ? 'popup-show' : ''}}">
-      <view class="popup-mask" catchtap="toggleBottomPopup"/>
-      <view class="popup-container">
-        <view class="btns">
-          <button class="btn" catchtap="toggleBottomPopup">
-            关闭 popup
-          </button>
-        </view>
-      </view>
-    </view>
+    </block>
+    
   </view>
