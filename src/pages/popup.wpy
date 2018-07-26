@@ -7,7 +7,6 @@
       <button class="btn btn-warn btn-empty" bindtap="popPosition(4)">从左边弹出popup</button>
       <button class="btn btn-danger btn-empty" catchtap="popPosition(2)">从右边弹出popup</button>
     </view>
-    <popup :show-popup.sync="popData[0].showPopup" :position.sync="popData[0].position" :id.sync="popData[0]"></popup>
     <repeat for="{{popData}}" index="i" item="item" key="row-{{index}}">
       <popup :show.sync="item.showPopup" :position.sync="item.position" :id.sync="i">
         <view slot="popContainer">

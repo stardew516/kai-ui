@@ -7,14 +7,6 @@
       <button class="btn btn-warn btn-empty" bindtap="popPosition" data-wpypopposition-a="4">从左边弹出popup</button>
       <button class="btn btn-danger btn-empty" catchtap="popPosition" data-wpypopposition-a="2">从右边弹出popup</button>
     </view>
-    
-  <view class="popup {{'popup-'+$popup$position}} {{ $popup$show ? 'popup-show' : ''}}">
-      <view class="popup-mask" catchtap="$popup$togglePopup" data-wpytogglepopup-a="{{$popup$id}}"/>
-      <view class="popup-container">
-        
-      </view>
-    </view>
-
     <block wx:for="{{popData}}" wx:for-index="i" wx:for-item="item" wx:key="row-{{index}}">
       
   <view class="popup {{'popup-'+item.position}} {{ item.showPopup ? 'popup-show' : ''}}">

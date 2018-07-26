@@ -6,10 +6,10 @@
 <template>
   <view class="kai-content">
     <view class="panel">
-      <select :selectData="selectData" />
+      <select :selectData="selectData"/>
     </view>
     <view class="panel">
-      <select1 :selectData="selectData1" />
+      <select1 :selectData="selectData1"/>
     </view>
   </view>
 </template>
@@ -30,11 +30,13 @@ export default class SelectPage extends wepy.page {
 
   data = {
     selectData: {
+      id: 0,
       list: [{name:'选择1'},{name:'选择2'},{name:'选择3'}],
       selectIndex: 0,
       class: 'select-success'
     },
     selectData1: {
+      id: 1,
       list: [{name:'选择1'},{name:'选择2'}],
       selectIndex: 1,
       class: 'select-danger',
