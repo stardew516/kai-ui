@@ -1,0 +1,27 @@
+
+  <view class="kai-content">
+    <view class="padding-10">
+      <button class="btn btn-success" catchtap="showActionSheet" data-wpyshowactionsheet-a="0">从顶部弹出popup</button>
+      <button class="btn btn-kai" catchtap="showActionSheet" data-wpyshowactionsheet-a="1">从底部弹出popup</button>
+    </view>
+    <block wx:for="{{asData}}" wx:for-index="i" wx:for-item="item" wx:key="row-{{index}}">
+      
+  <view class="ac-container {{item.show ? 'ac-show': ''}} {{item.top ? 'top' : 'bottom'}}">
+    <import src="../wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{$actionsheet$wxParseData:$actionsheet$article.nodes}}"/>
+    <block wx:for="{{item.itemList}}" wx:for-index="$actionsheet$i" wx:for-item="$actionsheet$item" wx:key="$actionsheet$row-{{$actionsheet$index}}">
+      <view class="ac-list {{$actionsheet$item.class}}" catchtap="$actionsheet$selectIndex" data-com-index="{{i}}" data-wpyselectindex-a="{{item.index}}" data-wpyselectindex-b="{{$actionsheet$i}}">
+        <view  wx:if="{{$actionsheet$item.slot}}">
+          <!-- {{item.slot}} -->
+          <!-- <template is="wxParse" data="{{wxParseData: article.nodes}}"/> -->
+        </view>
+        <view  wx:else>{{$actionsheet$item.value}}</view>
+        </view>
+      <view class="ac-list" wx:if="{{$actionsheet$i===item.itemList.length-1}}" catchtap="$actionsheet$selectIndex" data-com-index="{{i}}" data-wpyselectindex-a="{{item.index}}" data-wpyselectindex-b="{{$actionsheet$i}}" data-wpyselectindex-c="true">取消</view>
+    </block>
+  </view>
+
+    </block>
+    <!-- <import src="../wxParse/wxParse.wxml"/> -->
+    <!-- <template is="wxParse" data="{{wxParseData:article.nodes}}"/> -->
+  </view>
